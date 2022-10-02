@@ -19,6 +19,7 @@ const Credentials = (
         <Flex
             width={'100%'}
             justifyContent={'center'}
+            marginTop={'20px'}
         >
             <Flex
                 width={'fit-content'}
