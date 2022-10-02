@@ -14,7 +14,6 @@ const NavItem = (
 ) => {
     return (
         <Flex
-            marginLeft={'30px'}
             height={'60px'}
         >
             <Button

@@ -7,18 +7,18 @@ interface Button {
 }
 
 interface StyledButton {
-    width?: string | 'fit-content',
+    width?: string ,
     height?: string,
-    justifyContent?: string | 'center',
-    alignItems?: string | 'center',
+    justifyContent?: string,
+    alignItems?: string,
     backgroundColor?: string,
 }
 
 const StyledButton = styled.button<StyledButton>`
   display: flex;
-  justify-content: ${props => props.justifyContent};
-  align-items: ${props => props.alignItems};
-  width: ${props => props.width};
+  justify-content: ${props => props.justifyContent || 'center'};
+  align-items: ${props => props.alignItems || 'center'};
+  width: ${props => props.width || 'fit-content'};
   border-radius: 20px;
   border: 2px solid  #3a9de8;
   background-color: white;

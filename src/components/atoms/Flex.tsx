@@ -13,6 +13,8 @@ interface Flex {
     padding?: string,
     marginRight?: string,
     marginLeft?: string,
+    rowGap?: string,
+    columnGap?: string,
 
 }
 
@@ -28,6 +30,8 @@ const Flex = styled.div<Flex>`
   position: ${props => props.position};
   margin-right: ${props => props.marginRight};
   margin-left: ${props => props.marginLeft};
+  row-gap: ${props => props.rowGap};
+  column-gap: ${props => props.columnGap};
 `
 
 

@@ -14,6 +14,7 @@ interface LogoProps{
     justifySelf?: string,
     alignSelf?: string,
     left?: string,
+    borderRadius?: string,
 }
 
 const StyledImg = styled.img<LogoProps>`
@@ -26,6 +27,7 @@ const StyledImg = styled.img<LogoProps>`
   left: ${props => props.left};
   justify-self: ${props => props.justifySelf};
   align-self: ${props => props.alignSelf};
+  border-radius: ${props => props.borderRadius};
 `
 
 const Logo: FC <LogoProps> = ({src, alt, ...props}) => {

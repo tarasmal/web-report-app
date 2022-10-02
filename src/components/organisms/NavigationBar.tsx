@@ -10,8 +10,8 @@ const NavStyled = styled.div
   border-radius: 25px;
   width: 100%;
   height: 50px;
-  padding: 30px;
   background-color: white;
+  column-gap: 10px;
   
 `
 
