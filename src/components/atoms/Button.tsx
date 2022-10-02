@@ -1,5 +1,6 @@
 import React, {MouseEventHandler} from 'react';
 import styled from "styled-components";
+import Text from "./Text";
 
 interface Button {
     children: string | React.ReactNode,
@@ -28,6 +29,7 @@ const StyledButton = styled.button<StyledButton>`
     transition-duration: 0.4s;
     background-color: #3a9de8;
     color: white;
+    cursor: pointer;
   }
 
   color: grey;
@@ -46,7 +48,11 @@ const Button = (
             onClick={onClick}
             {...props}
         >
-            {children}
+            <Text
+                fontWeight={'500'}
+            >
+                {children}
+            </Text>
         </StyledButton>
     );
 };
