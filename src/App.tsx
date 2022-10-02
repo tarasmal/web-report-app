@@ -1,8 +1,9 @@
 import React from 'react';
 import NavigationBar from "./components/organisms/NavigationBar";
 import Flex from "./components/atoms/Flex";
-import Credentials from "./components/molecules/Credentials";
+import Credentials from "./components/organisms/Credentials";
 import content from './content.json'
+import './styles.css'
 
 function App() {
   return (
