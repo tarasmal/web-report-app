@@ -5,6 +5,8 @@ interface Flex {
     position?: string,
     flex?: string,
     flexGrow?: string,
+    flexShrink?: string,
+    flexBasis?: string,
     flexDirection?: string,
     justifyContent?: string,
     alignItems?: string,
@@ -31,6 +33,8 @@ const Flex = styled.div<Flex>`
   display: flex;
   flex: ${props => props.flex};
   flex-grow: ${props => props.flexGrow};
+  flex-shrink: ${props => props.flexShrink};
+  flex-basis: ${props => props.flexBasis};
   flex-direction: ${props => props.flexDirection};
   justify-content: ${props => props.justifyContent};
   align-items: ${props => props.alignItems};

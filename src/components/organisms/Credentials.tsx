@@ -26,7 +26,6 @@ const Credentials = (
                 columnGap={'30px'}
                 position={'relative'}
 
-
             >
                 <Text
                     color={'grey'}

@@ -1,6 +1,6 @@
 export interface Item {
     header: string,
-    subcontent: SubItem[],
+    subcontent?: SubItem[],
 }
 export interface SubItem {
     header: string,

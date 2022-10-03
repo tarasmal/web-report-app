@@ -1,11 +1,19 @@
 import React from 'react';
 import {Item} from '../../types'
-import Flex from "../atoms/Flex";
-import {v4} from "uuid";
+import styled from "styled-components";
+import SidebarItem from "../atoms/SidebarItem";
 
 interface Sidebar {
     content: Item[]
 }
+
+const StyledSidebar = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 2;
+  padding: 5px;
+`
 
 const Sidebar = (
     {
@@ -13,13 +21,12 @@ const Sidebar = (
     }: Sidebar
 ) => {
     return (
-        <Flex
-            flexDirection={'column'}
+        <StyledSidebar
         >
             {
-                content.map((contentItem) => <div key={v4()}></div>,)
+                content.map(({header}) =><SidebarItem>{header}</SidebarItem>)
             }
-        </Flex>
+        </StyledSidebar>
     );
 };
 
