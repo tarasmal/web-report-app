@@ -3,6 +3,8 @@ import styled from "styled-components";
 interface Flex {
     id?: string,
     position?: string,
+    flex?: string,
+    flexGrow?: string,
     flexDirection?: string,
     justifyContent?: string,
     alignItems?: string,
@@ -27,6 +29,8 @@ interface Flex {
 
 const Flex = styled.div<Flex>`
   display: flex;
+  flex: ${props => props.flex};
+  flex-grow: ${props => props.flexGrow};
   flex-direction: ${props => props.flexDirection};
   justify-content: ${props => props.justifyContent};
   align-items: ${props => props.alignItems};
