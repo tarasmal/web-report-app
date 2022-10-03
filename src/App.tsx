@@ -19,9 +19,11 @@ function App() {
       <HeaderWrapper>
         <Credentials title={'Cтудент групи ІС-13 Малярчук Тарас Васильович'} photo={'/avatar.jpg'} />
         <NavigationBar titles={Object.keys(content)}/>
-
       </HeaderWrapper>
-      <Flex padding={'25px'}>
+
+      <Flex
+          padding={'25px'}
+          justifyContent={'space-between'}>
         <Sidebar content={[
           {header: 'kek'}
         ]} />

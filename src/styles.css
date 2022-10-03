@@ -1,4 +1,7 @@
 body{
     margin: 0 0 0 0;
-    height: 5000px;
+    height: fit-content;
+}
+#root {
+    height: fit-content;
 }

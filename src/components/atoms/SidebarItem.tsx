@@ -7,7 +7,7 @@ interface SidebarItem {
 const StyledSidebarItem = styled.div`
   display: flex;
   justify-content: center;
-  width: 30%;
+  width: 10%;
 `
 
 const SidebarItem = (
