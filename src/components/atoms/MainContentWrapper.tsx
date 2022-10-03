@@ -5,7 +5,7 @@ const MainContentWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   width: 75%;
-  height: 2000px;
+  height: fit-content;
 `
 
 export default MainContentWrapper

@@ -14,7 +14,7 @@ function App() {
     <Flex
       flexDirection={'column'}
       rowGap={'50px'}
-      height={'100vh'}
+      height={'fit-content'}
     >
       <HeaderWrapper>
         <Credentials title={'Cтудент групи ІС-13 Малярчук Тарас Васильович'} photo={'/avatar.jpg'} />

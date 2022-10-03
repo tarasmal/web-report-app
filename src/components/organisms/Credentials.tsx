@@ -17,15 +17,13 @@ const Credentials = (
 ) => {
     return (
         <Flex
-            width={'100%'}
+
             justifyContent={'center'}
             marginTop={'20px'}
         >
             <Flex
                 width={'fit-content'}
                 columnGap={'30px'}
-                position={'relative'}
-
             >
                 <Text
                     color={'grey'}
