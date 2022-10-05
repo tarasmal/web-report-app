@@ -1,13 +1,11 @@
-export interface Item extends Content{
+export interface Item{
     header: string,
-    subcontent?: SubItem[],
-}
-interface SubItem extends Content{
-    header: string,
+    content?: Content[]
+    subcontent?: Item[],
 }
 
 interface Content {
-    type: 'text' | 'img' | 'code' | undefined,
+    type: 'text' | 'img' | 'code',
     data: string | undefined
 }
 

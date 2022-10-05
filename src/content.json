@@ -1,18 +1,19 @@
 {
   "Лабораторна робота №1": {
-    "Button1": [
-      {
-        "header": "subheader1",
-        "type": "text",
-        "data": "123"
-      },
-      {
-        "header": "subheader2",
-        "type": "photo"
-      }
-    ],
-    "Button2": [
-    ]
+    "Button1": {
+      "content": [
+        {
+
+        }
+      ]
+    },
+    "Button2": {
+      "subcontent": [
+        {
+
+        }
+      ]
+    }
   },
   "Лабораторна робота №2": {
 
