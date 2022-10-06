@@ -11,11 +11,11 @@ import Sidebar from "./components/organisms/Sidebar";
 
 function App() {
   const [currLab, setCurrLab] = useState(Object.values(content.labs)[0])
-  console.log(currLab)
+  
   return (
     <Flex
       flexDirection={'column'}
-      rowGap={'50px'}
+      rowGap={'40px'}
       height={'fit-content'}
     >
       <HeaderWrapper>
@@ -28,9 +28,7 @@ function App() {
           padding={'25px'}
           justifyContent={'space-between'}>
         <Sidebar content={currLab} />
-        <MainContentWrapper>
-          
-        </MainContentWrapper>
+        <MainContentWrapper content={currLab}/>
       </Flex>
 
     </Flex>

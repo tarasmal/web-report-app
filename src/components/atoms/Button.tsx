@@ -32,7 +32,7 @@ const StyledButton = styled.button<StyledButton>`
     cursor: pointer;
   }
 
-  color: grey;
+  color: black;
 `
 
 const Button = (

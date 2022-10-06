@@ -11,6 +11,7 @@ const Text = styled.p<Text>`
   font-weight: ${props => props.fontWeight};
   color: ${props => props.color};
   font-family: 'Noto Sans', sans-serif;
+  margin: 0;
 `
 
 export default Text;

@@ -4,6 +4,6 @@ export interface Item {
     subcontent?: Item[]
 }
 export interface Content {
-    type: 'text' | 'img' | 'code',
+    type: string,
     data: string
 }
