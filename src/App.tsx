@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import NavigationBar from "./components/organisms/NavigationBar";
 import Flex from "./components/atoms/Flex";
 import Credentials from "./components/organisms/Credentials";
@@ -10,6 +10,8 @@ import Sidebar from "./components/organisms/Sidebar";
 
 
 function App() {
+  const [currLab, setCurrLab] = useState(Object.values(content.labs)[0])
+  console.log(currLab)
   return (
     <Flex
       flexDirection={'column'}
@@ -17,18 +19,17 @@ function App() {
       height={'fit-content'}
     >
       <HeaderWrapper>
-        <Credentials title={'Cтудент групи ІС-13 Малярчук Тарас Васильович'} photo={'/avatar.jpg'} />
-        <NavigationBar titles={Object.keys(content)}/>
+        <Credentials title={`Cтудент групи ${content.credentials.group_name} ${content.credentials.full_name}`}
+                     photo={content.credentials.photo_path} />
+        <NavigationBar titles={Object.keys(content.labs)}/>
       </HeaderWrapper>
 
       <Flex
           padding={'25px'}
           justifyContent={'space-between'}>
-        <Sidebar content={[
-          {header: 'kek'}
-        ]} />
+        <Sidebar content={currLab} />
         <MainContentWrapper>
-          sdsd
+          
         </MainContentWrapper>
       </Flex>
 

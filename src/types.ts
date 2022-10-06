@@ -1,9 +1,9 @@
 export interface Item {
     header: string,
-    subcontent?: SubItem[],
+    content?: Content[],
+    subcontent?: Item[]
 }
-export interface SubItem {
-    header: string,
+export interface Content {
     type: 'text' | 'img' | 'code',
     data: string
 }
