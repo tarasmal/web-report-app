@@ -1,19 +1,39 @@
-import React, {useMemo} from 'react';
+import React, {useEffect, useState} from 'react';
 import NavigationBar from "./components/organisms/NavigationBar";
 import Flex from "./components/atoms/Flex";
-import Credentials from "./components/molecules/Credentials";
+import Credentials from "./components/organisms/Credentials";
+import content from './content.json'
+import './styles.css'
+import HeaderWrapper from "./components/atoms/HeaderWrapper";
+import MainContentWrapper from "./components/atoms/MainContentWrapper";
+import Sidebar from "./components/organisms/Sidebar";
 
+
+const labs = Object.values(content.labs)
 
 function App() {
-  // @ts-ignore
-  const titles = useMemo(() => [...Array(9).keys()].map((_, index) => `Лабораторна робота №${index + 1}`),[])
+  const [currLab, setCurrLab] = useState(0)
+
   return (
     <Flex
       flexDirection={'column'}
-      rowGap={'20px'}
+      rowGap={'40px'}
+      height={'fit-content'}
     >
-      <Credentials title={'Cтудент групи ІС-13 Малярчук Тарас Васильович'} photo={'/avatar.jpg'} />
-      <NavigationBar  titles={titles}/>
+      <HeaderWrapper>
+        <Credentials title={`Cтудент групи ${content.credentials.group_name} ${content.credentials.full_name}`}
+                     photo={content.credentials.photo_path} />
+        <NavigationBar setCurrentLab={setCurrLab} currLab={currLab} titles={Object.keys(content.labs)}/>
+      </HeaderWrapper>
+
+      <Flex
+          padding={'25px'}
+          justifyContent={'space-between'}
+      >
+        <Sidebar content={labs[currLab]} />
+        <MainContentWrapper content={labs[currLab]}/>
+      </Flex>
+
     </Flex>
   );
 }

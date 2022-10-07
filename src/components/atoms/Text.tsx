@@ -10,6 +10,8 @@ const Text = styled.p<Text>`
   font-size: ${props => props.fontSize};
   font-weight: ${props => props.fontWeight};
   color: ${props => props.color};
+  font-family: 'Noto Sans', sans-serif;
+  margin: 0;
 `
 
 export default Text;
