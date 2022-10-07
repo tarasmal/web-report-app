@@ -10,7 +10,11 @@
       "content": [
         {
           "type": "text",
-          "data": "data"
+          "data": "datadsadasdsd"
+        },
+        {
+          "type": "text",
+          "data": "datafdsfsdfsd"
         }
       ],
       "subcontent": [
@@ -20,12 +24,30 @@
             {
               "type": "img",
               "data": "/avatar.jpg"
+            },
+            {
+              "type": "code",
+              "data": "<p></p>"
             }
           ]
         }
       ]
     }],
-    "Лабораторна робота №2": [],
+    "Лабораторна робота №2": [
+      {
+        "header": "123tert",
+        "content": [
+          {
+            "type": "text",
+            "data": "datadsadasdsd"
+          },
+          {
+            "type": "code",
+            "data": "<p>\n  <img/>\n</p>"
+          }
+        ]
+      }
+    ],
     "Лабораторна робота №3": [],
     "Лабораторна робота №4": [],
     "Лабораторна робота №5": [],

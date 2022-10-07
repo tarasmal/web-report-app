@@ -14,7 +14,7 @@ const StyledSidebarItem = styled.a<SidebarItem>`
   align-items: center;
   width: 10%;
   padding: 5px 60px;
-  border: 2px solid #f2ec3d;
+  border: 2px solid #3a9de8;
   border-radius: 20px;
   transition-duration: 0.2s;
 
@@ -23,7 +23,7 @@ const StyledSidebarItem = styled.a<SidebarItem>`
 
   &:hover {
     transition-duration: 0.2s;
-    background-color: #f2ec3d;
+    background-color: #3a9de8;
     color: white;
     cursor: pointer;
   }

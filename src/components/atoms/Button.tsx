@@ -1,10 +1,11 @@
 import React, {MouseEventHandler} from 'react';
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 import Text from "./Text";
 
-interface Button {
+interface Button  {
     children: string | React.ReactNode,
-    onClick: MouseEventHandler<HTMLButtonElement> | any,
+    onClick: any,
+    isActive: boolean,
 }
 
 interface StyledButton {
@@ -13,8 +14,13 @@ interface StyledButton {
     justifyContent?: string,
     alignItems?: string,
     backgroundColor?: string,
+    isActive: boolean,
 }
 
+const activeStyle = css`
+  background-color:  #3a9de8;
+  color: white;
+`
 const StyledButton = styled.button<StyledButton>`
   display: flex;
   justify-content: ${props => props.justifyContent || 'center'};
@@ -31,12 +37,14 @@ const StyledButton = styled.button<StyledButton>`
     color: white;
     cursor: pointer;
   }
+  ${props => props.isActive && activeStyle};
 
   color: black;
 `
 
 const Button = (
     {
+        isActive,
         children,
         onClick,
         ...props
@@ -45,6 +53,7 @@ const Button = (
 ) => {
     return (
         <StyledButton
+            isActive={isActive}
             onClick={onClick}
             {...props}
         >

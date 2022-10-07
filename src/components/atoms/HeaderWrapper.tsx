@@ -3,9 +3,10 @@ import styled from "styled-components";
 const HeaderWrapper = styled.div`
   display: flex;
   row-gap: 20px;
-  justify-content: center;
+  justify-content: flex-start;
   position: sticky;
   flex-direction: column;
+  height: 160px;
   z-index: 2;
   background-color: white;
   top: 0;

@@ -17,18 +17,22 @@ const NavStyled = styled.div
 
 interface NavigationBar {
     titles: string[],
+    currLab: number,
+    setCurrentLab: Function
 }
 
 const NavigationBar = (
     {
-        titles
+        titles,
+        currLab,
+        setCurrentLab
     }: NavigationBar
 ) => {
     return (
         <NavStyled
         >
             {
-                titles.map((title, id) => <NavItem key={id}>{title}</NavItem>)
+                titles.map((title, id) => <NavItem isActive={currLab === id} onClick={() => setCurrentLab(id)} key={id}>{title}</NavItem>)
             }
         </NavStyled>
     );

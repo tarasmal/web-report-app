@@ -24,6 +24,7 @@ const Credentials = (
             <Flex
                 width={'fit-content'}
                 columnGap={'30px'}
+                alignItems={'center'}
             >
                 <Text
                     color={'black'}

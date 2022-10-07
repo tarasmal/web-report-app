@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import { Item } from "../../types";
+import TextBlock from "../molecules/TextBlock";
+import LogoBlock from "../molecules/LogoBlock";
 
 interface MainContentWrapper {
   content: Item[]
@@ -17,18 +19,18 @@ const getMainContent = (content: Item[]) => {
   const mainContent: JSX.Element[] = []
 
   const _getMainContent = (content: Item[]) => {
-    content.forEach((item, _) => {
+    content.forEach((item) => {
       mainContent.push(<h1><span className="anchor" id={item.header}></span>{item.header}</h1>)
-      item.content?.forEach((elem, _) => {
-        mainContent.push(elem.type === 'text' ? 
-        <p>{elem.data}</p> : elem.type === 'img' ?
-        <img src={elem.data} alt=""/> : elem.type === 'code' ?
-        <pre><code>{elem.data}</code></pre> : <p>error</p>)
+      item.content?.forEach((elem) => {
+        mainContent.push(elem.type === 'text' ?
+        <TextBlock>{elem.data}</TextBlock> : elem.type === 'img' ?
+        <LogoBlock src={elem.data}/> : elem.type === 'code' ?
+        <pre><code>{elem.data}</code></pre> : <TextBlock textColor={'red'} >Incorrect type</TextBlock>)
       })
       if(item.subcontent) _getMainContent(item.subcontent)
     })
   }
-  
+
   _getMainContent(content)
   return mainContent
 }
