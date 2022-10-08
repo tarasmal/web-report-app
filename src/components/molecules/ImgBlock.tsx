@@ -1,6 +1,6 @@
 import React from 'react';
 import Flex from "../atoms/Flex";
-import Logo from "../atoms/Logo";
+import Img from "../atoms/Img";
 
 interface ImgBlock {
     src: string
@@ -12,7 +12,7 @@ const ImgBlock = ({src}: ImgBlock) => {
             flexGrow={2}
             marginBottom={'15px'}
         >
-            <Logo src={src} alt={':D'} width={'500px'} height={'500px'}/>
+            <Img src={src} alt={''} maxWidth={'500px'}/>
         </Flex>
     );
 };

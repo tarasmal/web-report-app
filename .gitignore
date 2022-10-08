@@ -1,6 +1,7 @@
 # content
 #   content-example.json
 content.json
+/public/content
 
 # dependencies
 /node_modules
