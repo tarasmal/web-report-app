@@ -1,20 +1,25 @@
 import React from 'react';
+import Anchor from '../atoms/Anchor';
 import Flex from "../atoms/Flex";
 import Text from "../atoms/Text";
 
-interface TextBlock {
-    children: string
-    textColor?: string,
+interface HeaderBlock {
+    children: string,
+    anchor: string,
 }
 
-const TextBlock = ({children, textColor}: TextBlock) => {
+const HeaderBlock = (
+    {
+        children,
+        anchor,
+    }: HeaderBlock) => {
     return (
         <Flex
-            flexGrow={1}
-            marginBottom={'4px'}
+            marginBottom={'10px'}
         >
+            <Anchor id={anchor}/>
             <Text
-                color={textColor ? textColor : 'black'}
+                fontSize='30px'
                 overflowWrap={'break-word'}
                 wordBreak={'break-word'}
             >
@@ -24,4 +29,4 @@ const TextBlock = ({children, textColor}: TextBlock) => {
     );
 };
 
-export default TextBlock;
+export default HeaderBlock;

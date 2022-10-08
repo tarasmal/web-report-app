@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
-import Text from './Text'
+import Text from '../atoms/Text'
 
 interface SidebarItem {
     href?: string,
@@ -12,8 +12,9 @@ const StyledSidebarItem = styled.a<SidebarItem>`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 10%;
-  padding: 5px 60px;
+  text-align: center;
+  width: 40%;
+  padding: 5px 30px;
   border: 2px solid #3a9de8;
   border-radius: 20px;
   transition-duration: 0.2s;
@@ -45,6 +46,8 @@ const SidebarItem = (
         >
             <Text
                 fontWeight='400'
+                overflowWrap={'break-word'}
+                wordBreak={'break-word'}
             >
                 {children}
             </Text>

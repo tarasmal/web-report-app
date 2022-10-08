@@ -26,7 +26,7 @@ interface Flex {
     top?: string,
     zIndex?: string,
     backgroundColor?: string,
-
+    borderRadius?: string,
 }
 
 const Flex = styled.div<Flex>`
@@ -53,6 +53,7 @@ const Flex = styled.div<Flex>`
   top: ${props => props.top};
   z-index: ${props => props.zIndex};
   background-color: ${props => props.backgroundColor};
+  border-radius: ${props => props.borderRadius}
 `
 
 

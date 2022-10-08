@@ -1,7 +1,7 @@
 import React from 'react';
 import {Item} from '../../types'
 import styled from "styled-components";
-import SidebarItem from "../atoms/SidebarItem";
+import SidebarItem from "../molecules/SidebarItem";
 import Flex from "../atoms/Flex";
 
 interface Sidebar {
@@ -22,10 +22,10 @@ const getSidebarItems = (content: Item[]) => {
     const headers : JSX.Element[] = []
 
     const _getSidebarItems = (items: Item[], nestedLevel: number) => {
-        items.forEach((item, _) => {
+        items.forEach((item, index) => {
             headers.push(
                 <SidebarItem
-                    href={`#${item.header}`}
+                    href={`#l${nestedLevel}-n${index}`}
                     marginLeft={(nestedLevel * 30).toString().concat('px')}
                 >
                     {item.header}

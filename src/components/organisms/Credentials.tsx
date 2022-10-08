@@ -20,6 +20,7 @@ const Credentials = (
 
             justifyContent={'center'}
             marginTop={'20px'}
+            marginBottom={'20px'}
         >
             <Flex
                 width={'fit-content'}

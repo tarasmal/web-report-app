@@ -4,6 +4,8 @@ interface Text {
     fontSize?: string,
     fontWeight?: string,
     color?: string,
+    overflowWrap?: string,
+    wordBreak?: string
 }
 
 const Text = styled.p<Text>`
@@ -12,6 +14,8 @@ const Text = styled.p<Text>`
   color: ${props => props.color};
   font-family: 'Noto Sans', sans-serif;
   margin: 0;
+  overflow-wrap: ${props => props.overflowWrap};
+  word-break: ${props => props.wordBreak};
 `
 
 export default Text;
