@@ -26,7 +26,7 @@ const getSidebarItems = (content: Item[]) => {
             headers.push(
                 <SidebarItem
                     href={`#l${nestedLevel}-n${index}`}
-                    marginLeft={(nestedLevel * 30).toString().concat('px')}
+                    marginLeft={(nestedLevel * 45).toString().concat('px')}
                 >
                     {item.header}
                 </SidebarItem>
@@ -47,6 +47,7 @@ const Sidebar = (
     return (
         <Flex
             width={'25%'}
+            minWidth={'25%'}
         >
             <StyledSidebar
             >
