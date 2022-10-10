@@ -59,7 +59,7 @@ const Button = (
             <Text
                 fontWeight={'500'}
                 overflowWrap={'hidden'}
-                color={isActive ? 'white' : 'black'}
+                color={isActive ? 'white' : undefined}
             >
                 {children}
             </Text>
