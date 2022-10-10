@@ -4,16 +4,16 @@ import Text from '../atoms/Text'
 
 interface SidebarItem {
     href?: string,
-    marginLeft?: string,
+    nestedLevel?: number,
 
     children: React.ReactNode,
 }
+
 const StyledSidebarItem = styled.a<SidebarItem>`
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  width: 40%;
   padding: 5px 30px;
   border: 2px solid #3a9de8;
   border-radius: 20px;
@@ -22,14 +22,15 @@ const StyledSidebarItem = styled.a<SidebarItem>`
   text-decoration: none;
   color: black;
 
+  width: calc(40% - ${props => props.nestedLevel ? (props.nestedLevel * 45).toString().concat('px') : '0px'});
+  margin-left: ${props => props.nestedLevel ? (props.nestedLevel * 45).toString().concat('px') : '0px'};
+
   &:hover {
     transition-duration: 0.2s;
     background-color: #3a9de8;
     color: white;
     cursor: pointer;
   }
-
-  margin-left: ${props => props.marginLeft};
 `
 
 const SidebarItem = (

@@ -16,6 +16,12 @@ const StyledSidebar = styled.div`
   padding-left: 30px;
   row-gap: 10px;
   width: 25%;
+  overflow-y: scroll;
+  height: calc(100% - 200px - 20px);
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `
 
 const getSidebarItems = (content: Item[]) => {
@@ -25,8 +31,8 @@ const getSidebarItems = (content: Item[]) => {
         items.forEach((item, index) => {
             headers.push(
                 <SidebarItem
-                    href={`#l${nestedLevel}-n${index}`}
-                    marginLeft={(nestedLevel * 45).toString().concat('px')}
+                    href={`#l${nestedLevel + 1}-n${index + 1}-${item.header}`}
+                    nestedLevel={nestedLevel}
                 >
                     {item.header}
                 </SidebarItem>
@@ -50,6 +56,7 @@ const Sidebar = (
             minWidth={'25%'}
         >
             <StyledSidebar
+                id='sidebar'
             >
                 {
                     getSidebarItems(content)

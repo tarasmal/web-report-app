@@ -20,7 +20,7 @@ const getMainContent = (content: Item[]) => {
 
   const _getMainContent = (content: Item[], nestedLevel: number) => {
     content.forEach((item, index) => {
-      mainContent.push(<HeaderBlock anchor={`l${nestedLevel}-n${index}`}>{item.header}</HeaderBlock>)
+      mainContent.push(<HeaderBlock anchor={`l${nestedLevel + 1}-n${index + 1}-${item.header}`}>{item.header}</HeaderBlock>)
 
       item.content?.forEach((block) => {
         switch (block.type) {
