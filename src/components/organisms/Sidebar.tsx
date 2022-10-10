@@ -15,7 +15,7 @@ const StyledSidebar = styled.div`
   align-items: flex-start;
   padding-left: 30px;
   row-gap: 10px;
-  width: 25%;
+  width: 30%;
   overflow-y: scroll;
   height: calc(100% - 200px - 20px);
 

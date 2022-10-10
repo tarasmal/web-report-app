@@ -12,7 +12,7 @@ import './styles.css'
 import content from './content/content.json'
 
 
-const LABS_NAMES = Object.keys(content.labs)
+const LAB_NAMES = Object.keys(content.labs)
 const LABS = Object.values(content.labs)
 
 
@@ -27,12 +27,12 @@ function App() {
       <HeaderWrapper>
         <Credentials title={`Cтудент групи ${content.credentials.group_name} ${content.credentials.full_name}`}
                      photo={content.credentials.photo_path} />
-        <NavigationBar setCurrentLab={setCurrLab} currLab={currLab} titles={LABS_NAMES}/>
+        <NavigationBar setCurrentLab={setCurrLab} currLab={currLab} titles={LAB_NAMES}/>
       </HeaderWrapper>
 
       <Flex
           padding={'0px 25px'}
-          columnGap={'50px'}
+          columnGap={'30px'}
       >
         <Sidebar content={LABS[currLab]} />
         <MainContent content={LABS[currLab]}/>

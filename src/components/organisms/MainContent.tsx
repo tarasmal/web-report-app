@@ -13,6 +13,7 @@ const StyledMainContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
   height: fit-content;
+  margin-bottom: 30px;
 `
 
 const getMainContent = (content: Item[]) => {
@@ -20,7 +21,7 @@ const getMainContent = (content: Item[]) => {
 
   const _getMainContent = (content: Item[], nestedLevel: number) => {
     content.forEach((item, index) => {
-      mainContent.push(<HeaderBlock anchor={`l${nestedLevel + 1}-n${index + 1}-${item.header}`}>{item.header}</HeaderBlock>)
+      mainContent.push(<HeaderBlock nestedLevel={nestedLevel} anchor={`l${nestedLevel + 1}-n${index + 1}-${item.header}`}>{item.header}</HeaderBlock>)
 
       item.content?.forEach((block) => {
         switch (block.type) {

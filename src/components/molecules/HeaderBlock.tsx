@@ -6,12 +6,14 @@ import Text from "../atoms/Text";
 interface HeaderBlock {
     children: string,
     anchor: string,
+    nestedLevel: number,
 }
 
 const HeaderBlock = (
     {
         children,
         anchor,
+        nestedLevel
     }: HeaderBlock) => {
     return (
         <Flex
@@ -19,7 +21,7 @@ const HeaderBlock = (
         >
             <Anchor id={anchor}/>
             <Text
-                fontSize='30px'
+                fontSize={nestedLevel ? '23px' : '30px'}
                 overflowWrap={'break-word'}
                 wordBreak={'break-word'}
             >

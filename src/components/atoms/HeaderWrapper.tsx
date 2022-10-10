@@ -12,6 +12,7 @@ const HeaderWrapper = styled.div`
   left: 0;
   right: 0;
   padding: 0px 25px 0px 25px;
+  width: fit-content;
 `
 
 export default HeaderWrapper
