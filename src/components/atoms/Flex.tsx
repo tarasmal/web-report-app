@@ -13,6 +13,7 @@ interface Flex {
     alignSelf?: string,
     justifySelf?: string,
     width?: string,
+    minWidth?: string,
     height?: string,
     margin?: string,
     padding?: string,
@@ -26,7 +27,7 @@ interface Flex {
     top?: string,
     zIndex?: string,
     backgroundColor?: string,
-
+    borderRadius?: string,
 }
 
 const Flex = styled.div<Flex>`
@@ -39,6 +40,7 @@ const Flex = styled.div<Flex>`
   justify-content: ${props => props.justifyContent};
   align-items: ${props => props.alignItems};
   width: ${props => props.width};
+  min-width: ${props => props.minWidth};
   height: ${props => props.height};
   margin: ${props => props.margin};
   padding: ${props => props.padding};
@@ -53,6 +55,7 @@ const Flex = styled.div<Flex>`
   top: ${props => props.top};
   z-index: ${props => props.zIndex};
   background-color: ${props => props.backgroundColor};
+  border-radius: ${props => props.borderRadius}
 `
 
 

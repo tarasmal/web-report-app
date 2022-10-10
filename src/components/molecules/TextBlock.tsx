@@ -1,7 +1,6 @@
 import React from 'react';
 import Flex from "../atoms/Flex";
 import Text from "../atoms/Text";
-import {isContext} from "vm";
 
 interface TextBlock {
     children: string
@@ -9,18 +8,19 @@ interface TextBlock {
 }
 
 const TextBlock = ({children, textColor}: TextBlock) => {
-    console.log(textColor)
     return (
         <Flex
             flexGrow={1}
+            marginBottom={'4px'}
         >
             <Text
                 color={textColor ? textColor : 'black'}
+                overflowWrap={'break-word'}
+                wordBreak={'break-word'}
             >
                {children}
            </Text>
-        </Flex
-            >
+        </Flex>
     );
 };
 

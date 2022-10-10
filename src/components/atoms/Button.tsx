@@ -1,4 +1,4 @@
-import React, {MouseEventHandler} from 'react';
+import React from 'react';
 import styled, {css} from "styled-components";
 import Text from "./Text";
 
@@ -18,8 +18,7 @@ interface StyledButton {
 }
 
 const activeStyle = css`
-  background-color:  #3a9de8;
-  color: white;
+  background-color: #3a9de8;
 `
 const StyledButton = styled.button<StyledButton>`
   display: flex;
@@ -59,6 +58,8 @@ const Button = (
         >
             <Text
                 fontWeight={'500'}
+                overflowWrap={'hidden'}
+                color={isActive ? 'white' : undefined}
             >
                 {children}
             </Text>

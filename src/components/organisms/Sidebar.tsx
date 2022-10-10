@@ -1,7 +1,7 @@
 import React from 'react';
 import {Item} from '../../types'
 import styled from "styled-components";
-import SidebarItem from "../atoms/SidebarItem";
+import SidebarItem from "../molecules/SidebarItem";
 import Flex from "../atoms/Flex";
 
 interface Sidebar {
@@ -15,18 +15,24 @@ const StyledSidebar = styled.div`
   align-items: flex-start;
   padding-left: 30px;
   row-gap: 10px;
-  width: 25%;
+  width: 30%;
+  overflow-y: scroll;
+  height: calc(100% - 200px - 20px);
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `
 
 const getSidebarItems = (content: Item[]) => {
     const headers : JSX.Element[] = []
 
     const _getSidebarItems = (items: Item[], nestedLevel: number) => {
-        items.forEach((item, _) => {
+        items.forEach((item, index) => {
             headers.push(
                 <SidebarItem
-                    href={`#${item.header}`}
-                    marginLeft={(nestedLevel * 30).toString().concat('px')}
+                    href={`#l${nestedLevel + 1}-n${index + 1}-${item.header}`}
+                    nestedLevel={nestedLevel}
                 >
                     {item.header}
                 </SidebarItem>
@@ -47,8 +53,10 @@ const Sidebar = (
     return (
         <Flex
             width={'25%'}
+            minWidth={'25%'}
         >
             <StyledSidebar
+                id='sidebar'
             >
                 {
                     getSidebarItems(content)

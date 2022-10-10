@@ -1,15 +1,20 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
+
 import NavigationBar from "./components/organisms/NavigationBar";
 import Flex from "./components/atoms/Flex";
 import Credentials from "./components/organisms/Credentials";
-import content from './content.json'
-import './styles.css'
 import HeaderWrapper from "./components/atoms/HeaderWrapper";
-import MainContentWrapper from "./components/atoms/MainContentWrapper";
+import MainContent from "./components/organisms/MainContent";
 import Sidebar from "./components/organisms/Sidebar";
 
+import './styles.css'
 
-const labs = Object.values(content.labs)
+import content from './content/content.json'
+
+
+const LAB_NAMES = Object.keys(content.labs)
+const LABS = Object.values(content.labs)
+
 
 function App() {
   const [currLab, setCurrLab] = useState(0)
@@ -17,21 +22,20 @@ function App() {
   return (
     <Flex
       flexDirection={'column'}
-      rowGap={'40px'}
       height={'fit-content'}
     >
       <HeaderWrapper>
         <Credentials title={`Cтудент групи ${content.credentials.group_name} ${content.credentials.full_name}`}
                      photo={content.credentials.photo_path} />
-        <NavigationBar setCurrentLab={setCurrLab} currLab={currLab} titles={Object.keys(content.labs)}/>
+        <NavigationBar setCurrentLab={setCurrLab} currLab={currLab} titles={LAB_NAMES}/>
       </HeaderWrapper>
 
       <Flex
-          padding={'25px'}
-          justifyContent={'space-between'}
+          padding={'0px 25px'}
+          columnGap={'30px'}
       >
-        <Sidebar content={labs[currLab]} />
-        <MainContentWrapper content={labs[currLab]}/>
+        <Sidebar content={LABS[currLab]} />
+        <MainContent content={LABS[currLab]}/>
       </Flex>
 
     </Flex>

@@ -2,10 +2,11 @@ import React, {FC} from 'react';
 import styled from "styled-components";
 
 
-interface LogoProps{
+interface ImgProps{
     src: string,
     alt: string,
     width?: string
+    maxWidth?: string,
     height?: string,
     position?: string,
     right?: string,
@@ -17,8 +18,9 @@ interface LogoProps{
     borderRadius?: string,
 }
 
-const StyledImg = styled.img<LogoProps>`
+const StyledImg = styled.img<ImgProps>`
   width: ${props => props.width};
+  max-width: ${props => props.maxWidth};
   height: ${props => props.height};
   position: ${props => props.position || 'relative'};
   right: ${props => props.right};
@@ -30,14 +32,14 @@ const StyledImg = styled.img<LogoProps>`
   border-radius: ${props => props.borderRadius};
 `
 
-const Logo: FC <LogoProps> = ({src, alt, ...props}) => {
+const Img: FC <ImgProps> = ({src, alt, ...props}) => {
     return (
         <StyledImg
-            src={src}
+            src={'content/' + src}
             alt={alt}
             {...props}
         />
     );
 };
 
-export default Logo;
+export default Img;

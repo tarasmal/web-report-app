@@ -1,7 +1,7 @@
 import React from 'react';
 import Flex from "../atoms/Flex";
 import Text from "../atoms/Text";
-import Logo from "../atoms/Logo";
+import Img from "../atoms/Img";
 
 interface Credentials {
     title: string,
@@ -20,6 +20,7 @@ const Credentials = (
 
             justifyContent={'center'}
             marginTop={'20px'}
+            marginBottom={'20px'}
         >
             <Flex
                 width={'fit-content'}
@@ -31,7 +32,7 @@ const Credentials = (
                 >
                     {title}
                 </Text>
-                <Logo src={photo} alt={'photo'} borderRadius={'30%'} width={'50px'} height={'50px'} />
+                <Img src={'credentials/' + photo} alt={'photo'} borderRadius={'30%'} width={'50px'} height={'50px'} />
             </Flex>
         </Flex>
     );

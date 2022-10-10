@@ -1,19 +1,20 @@
 import React from 'react';
 import styled from "styled-components";
-import Text from './Text'
+import Text from '../atoms/Text'
 
 interface SidebarItem {
     href?: string,
-    marginLeft?: string,
+    nestedLevel?: number,
 
     children: React.ReactNode,
 }
+
 const StyledSidebarItem = styled.a<SidebarItem>`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 10%;
-  padding: 5px 60px;
+  text-align: center;
+  padding: 5px 30px;
   border: 2px solid #3a9de8;
   border-radius: 20px;
   transition-duration: 0.2s;
@@ -21,14 +22,15 @@ const StyledSidebarItem = styled.a<SidebarItem>`
   text-decoration: none;
   color: black;
 
+  width: calc(40% - ${props => props.nestedLevel ? (props.nestedLevel * 45).toString().concat('px') : '0px'});
+  margin-left: ${props => props.nestedLevel ? (props.nestedLevel * 45).toString().concat('px') : '0px'};
+
   &:hover {
     transition-duration: 0.2s;
     background-color: #3a9de8;
     color: white;
     cursor: pointer;
   }
-
-  margin-left: ${props => props.marginLeft};
 `
 
 const SidebarItem = (
@@ -45,6 +47,8 @@ const SidebarItem = (
         >
             <Text
                 fontWeight='400'
+                overflowWrap={'break-word'}
+                wordBreak={'break-word'}
             >
                 {children}
             </Text>

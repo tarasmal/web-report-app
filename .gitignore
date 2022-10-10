@@ -1,10 +1,11 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# content
+# content-example.json
+content.json
 
 # dependencies
 /node_modules
 /.pnp
 .pnp.js
-./src/content.json
 
 # testing
 /coverage
@@ -22,3 +23,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# idea
+/.idea
