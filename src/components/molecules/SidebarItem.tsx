@@ -2,6 +2,8 @@ import React from 'react';
 import styled from "styled-components";
 import Text from '../atoms/Text'
 
+import config from "../../config.json"
+
 interface SidebarItem {
     href?: string,
     nestedLevel?: number,
@@ -15,7 +17,7 @@ const StyledSidebarItem = styled.a<SidebarItem>`
   align-items: center;
   text-align: center;
   padding: 5px 30px;
-  border: 2px solid #3a9de8;
+  border: 2px solid ${config.main_color};
   border-radius: 20px;
   transition-duration: 0.2s;
 
@@ -27,7 +29,7 @@ const StyledSidebarItem = styled.a<SidebarItem>`
 
   &:hover {
     transition-duration: 0.2s;
-    background-color: #3a9de8;
+    background-color: ${config.main_color};
     color: white;
     cursor: pointer;
   }

@@ -2,6 +2,8 @@ import React from 'react';
 import styled, {css} from "styled-components";
 import Text from "./Text";
 
+import config from "../../config.json"
+
 interface Button  {
     children: string | React.ReactNode,
     onClick: any,
@@ -18,7 +20,7 @@ interface StyledButton {
 }
 
 const activeStyle = css`
-  background-color: #3a9de8;
+  background-color: ${config.main_color};
 `
 const StyledButton = styled.button<StyledButton>`
   display: flex;
@@ -26,13 +28,13 @@ const StyledButton = styled.button<StyledButton>`
   align-items: ${props => props.alignItems || 'center'};
   width: ${props => props.width || 'fit-content'};
   border-radius: 20px;
-  border: 2px solid  #3a9de8;
+  border: 2px solid ${config.main_color};
   background-color: white;
   transition-duration: 0.4s;
 
   &:hover {
     transition-duration: 0.4s;
-    background-color: #3a9de8;
+    background-color: ${config.main_color};
     color: white;
     cursor: pointer;
   }
