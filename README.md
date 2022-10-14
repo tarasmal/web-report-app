@@ -2,6 +2,7 @@
 **ОТВЕТ:**
 - Установить Node.js, Git
 - `git clone https://github.com/tarasmal/web-report-app.git .`
+- Создать файл `content.json` (в директории `src/content/`) и переместить туда содержимое файла `content-example.json`
 - `npm install` в директории с проектом
 - `npm start` в директории с проектом
 
