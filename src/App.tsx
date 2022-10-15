@@ -17,7 +17,7 @@ const LABS = Object.values(content.labs)
 
 
 function App() {
-  const [currLab, setCurrLab] = useState(0)
+  const [currLab, setCurrLab] = useState<number>(localStorage.currLab ? +localStorage.currLab : 0)
 
   return (
     <Flex
