@@ -28,7 +28,7 @@
                           },
                           {
                               "type": "code",
-                              "data": "<p></p>"
+                              "data": "<div>\n  <p>\n       Content\n   </p>\n<div>"
                           }
                       ]
                   }

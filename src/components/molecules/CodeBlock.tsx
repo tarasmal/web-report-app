@@ -1,6 +1,5 @@
 import React from 'react';
 import Flex from "../atoms/Flex";
-import Text from "../atoms/Text";
 
 interface CodeBlock {
     children: string
@@ -21,9 +20,11 @@ const CodeBlock = (
             width={'fit-content'}
             marginBottom={'6px'}
         >
-            <Text>
-               {children}
-           </Text>
+            <pre>
+                <code>
+                    {children}
+                </code>
+           </pre>
         </Flex>
     );
 };
