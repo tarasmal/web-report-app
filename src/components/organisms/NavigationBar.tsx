@@ -32,7 +32,10 @@ const NavigationBar = (
         <NavStyled
         >
             {
-                titles.map((title, id) => <NavItem isActive={currLab === id} onClick={() => setCurrentLab(id)} key={id}>{title}</NavItem>)
+                titles.map((title, id) => <NavItem isActive={currLab === id} onClick={() => {
+                    setCurrentLab(id)
+                    localStorage.currLab = id
+                }} key={id}>{title}</NavItem>)
             }
         </NavStyled>
     );
